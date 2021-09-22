@@ -24,6 +24,11 @@ public class LiteratureFactory {
 
 
     Literature createFrom( JSONObject obj ) {
+
+        for ( ConcreteFactory factory : factories ){
+            Literature lit = factory.create( obj );
+            if ( lit != null ) return  lit;
+        }
         return null ;
     }
 }

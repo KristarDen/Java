@@ -10,6 +10,9 @@ public class JournalFactory implements ConcreteFactory {
     public Literature create(JSONObject obj) {
         // obj.get...("field") throws JSONException if no field found
         try {
+            if ( ! "Journal".equals( obj.getString( "type") ))
+                return null;
+
             return new Journal(
                     obj.getString("title"),
                     obj.getString("number")

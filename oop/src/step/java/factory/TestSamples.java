@@ -5,38 +5,51 @@ import step.java.library.Book;
 
 public class TestSamples {
 
+    private static JSONObject
+        book, journal, newspaper, invalid;
+
     public static JSONObject getJsonBook() {
-        JSONObject book = new JSONObject();
-        book.put( "type", "Book");
-        book.put( "author", "Jack London");
-        book.put( "title", "Martin Eden");
+
+        if ( book == null ){
+            book = new JSONObject();
+            book.put( "type", "Book");
+            book.put( "author", "Jack London");
+            book.put( "title", "Martin Eden");
+        }
 
         return book;
     }
 
     public static JSONObject getJsonJournal() {
-        JSONObject jrnl = new JSONObject();
-        jrnl.put( "type", "Journal" ) ;
-        jrnl.put( "number", "2021, 1" ) ;
-        jrnl.put( "title", "Quantum Mechanics" ) ;
-        return jrnl ;
+        if(journal == null) {
+            journal = new JSONObject();
+            journal.put( "type", "Journal" ) ;
+            journal.put( "number", "2021, 1" ) ;
+            journal.put( "title", "Quantum Mechanics" ) ;
+        }
+
+        return journal ;
     }
 
     public static JSONObject getJsonNewspaper() {
-        JSONObject newspaper = new JSONObject();
-        newspaper.put( "type", "Newspaper");
-        newspaper.put( "release_date", "Wed, Jul 4, '01");
-        newspaper.put( "title", "Dumskaya");
-
+        if (newspaper == null){
+            newspaper = new JSONObject();
+            newspaper.put( "type", "Newspaper");
+            newspaper.put( "release_date", "Wed, Jul 4, '01");
+            newspaper.put( "title", "Dumskaya");
+        }
         return newspaper;
     }
 
     public static JSONObject getJsonInvalidType() {
-        JSONObject obj = new JSONObject();
-        obj.put( "type", "Invalid" ) ;
-        obj.put( "number", "2021, 1" ) ;
-        obj.put( "title", "Quantum Mechanics" ) ;
-        obj.put( "author", "Jack London");
-        return obj ;
+        if(invalid == null){
+            invalid = new JSONObject();
+            invalid.put( "type", "Invalid" ) ;
+            invalid.put( "number", "2021, 1" ) ;
+            invalid.put( "title", "Quantum Mechanics" ) ;
+            invalid.put( "author", "Jack London");
+        }
+
+        return invalid ;
     }
 }
