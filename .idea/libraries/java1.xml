@@ -1,9 +1,0 @@
-<component name="libraryTable">
-  <library name="java1">
-    <CLASSES>
-      <root url="jar://$PROJECT_DIR$/oop/src/step/java/java.zip!/" />
-    </CLASSES>
-    <JAVADOC />
-    <SOURCES />
-  </library>
-</component>
