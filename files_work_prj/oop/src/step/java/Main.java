@@ -18,14 +18,14 @@ public class Main {
         */
 //        lib.addDirectory( "./src/step/java/fs/" ) ;
 //        lib.print() ;
-        // CreateFiles creator = new CreateFiles() ;
-        // creator.showDir() ;
+         CreateFiles creator = new CreateFiles() ;
+         creator.showDir() ;
         // creator.createBook() ;
         /* System.out.println( creator.getFileContent(
                 "./src/step/java/fs/" +
                 "Jack London_Martin Eden.json"
         ));*/
-        new Threads().demo3() ;
+        //new Threads().demo3() ;
     }
 }
 /*

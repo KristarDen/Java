@@ -5,8 +5,11 @@ import step.java.factory.TestSamples;
 import step.java.library.Book;
 
 import java.io.*;
+import java.lang.reflect.Array;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 /**
  * Create files for library funds
@@ -25,19 +28,39 @@ public class CreateFiles {
         if( dir.isDirectory() ) {
             // get files list
             for( File f : dir.listFiles() ) {
-                System.out.printf(
-                        "%s\t%s\t%s%n",
-                        printer.format( f.lastModified() ),
-                        f.isDirectory()
-                            ? "<DIR>"
-                            : f.length() + "",
-                        f.getName()
-                ) ;
+
+                //проверка расщирения файла
+                if( checkExtention(f.getName()) == true) {
+
+                    System.out.printf(
+                            "%s\t%s\t%s%n",
+                            printer.format(f.lastModified()),
+                            f.isDirectory()
+                                    ? "<DIR>"
+                                    : f.length() + "",
+                            f.getName()
+                    );
+                }
             }
         } else {
             System.err.println( "Path not found" ) ;
         }
     }
+
+    public Boolean checkExtention(String fileName){
+        String[] extensions = { ".txt", ".json", ".lit" };
+
+        for (String ext: extensions){
+
+            if ( fileName.lastIndexOf(ext) != -1 ){
+                return true;
+            }
+
+        }
+
+        return false;
+    }
+
 
     public void createBook() {
         Book book = (Book) new BookFactory()
