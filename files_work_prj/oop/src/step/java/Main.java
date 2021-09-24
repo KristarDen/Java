@@ -2,6 +2,7 @@ package step.java;
 
 import step.java.excercises.Threads;
 import step.java.fs.CreateFiles;
+import step.java.excercises.Db;
 import step.java.library.*;
 
 import java.util.Date;
@@ -18,14 +19,17 @@ public class Main {
         */
 //        lib.addDirectory( "./src/step/java/fs/" ) ;
 //        lib.print() ;
-         CreateFiles creator = new CreateFiles() ;
-         creator.showDir() ;
+         //CreateFiles creator = new CreateFiles() ;
+         //creator.showDir() ;
         // creator.createBook() ;
         /* System.out.println( creator.getFileContent(
                 "./src/step/java/fs/" +
                 "Jack London_Martin Eden.json"
         ));*/
         //new Threads().demo3() ;
+
+        Db db = new Db();
+        db.demo();
     }
 }
 /*
