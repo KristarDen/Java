@@ -2,12 +2,11 @@ package step.java.web1.util;
 
 import org.json.simple.JSONObject;
 import step.java.web1.models.Picture;
-
 import java.sql.*;
 import java.util.ArrayList;
 
 public class Db {
-    final private static String SUFFIX = "_0" ;
+    final private static String SUFFIX = "_9" ;
     private static Connection connection ;
 
     public static boolean setConnection( JSONObject connectionData ) {
@@ -46,9 +45,7 @@ public class Db {
             catch( Exception ignored ) {}
     }
 
-    /**
-     * Creates table for gallery
-     */
+
     private static void createGallery() {
         if( connection == null ) return ;
         String query = null ;
@@ -65,9 +62,6 @@ public class Db {
         }
     }
 
-    /**
-     * Find picture by id
-     */
     public static Picture getPictureById( String id ) {
         if( connection == null ) return null ;
         try( PreparedStatement prep = connection.prepareStatement(
@@ -91,9 +85,6 @@ public class Db {
         }
     }
 
-    /**
-     * Inserts Picture in DB
-     */
     public static boolean addPicture( Picture pic ) {
         if( connection == null ) return false ;
         String query = "INSERT INTO Pictures" + SUFFIX +
@@ -111,9 +102,7 @@ public class Db {
         }
     }
 
-    /**
-     * Loads picture(s) list (gallery)
-     */
+
     public static ArrayList<Picture> getPictures() {
         ArrayList<Picture> res = null ;
         try ( Statement statement = connection.createStatement() ) {
@@ -134,9 +123,7 @@ public class Db {
         return res ;
     }
 
-    /**
-     * Update picture
-     */
+
     public static boolean updatePicture( Picture pic ) {
         if( connection == null
          || pic == null
