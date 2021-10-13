@@ -1,0 +1,50 @@
+body {
+    background: #bebebe;
+    margin: 0;
+    padding: 0;
+}
+
+.picture {
+    background: snow;
+    border: 2px solid #999;
+    box-shadow: 7px 7px 3px #777;
+    display: inline-block;
+    margin: 10px;
+    vertical-align: top;
+    width: 25vw;
+}
+    .picture img {
+        max-height: 10vw;
+        max-width: 15vw;
+    }
+    .picture p {
+        font-size: 3vw;
+    }
+    .picture tt {
+        visibility: hidden;
+    }
+    .picture button {
+        color: maroon;
+    }
+.tool-button {
+    background: url("../img/edit_icons.png");
+    background-size: 300%;
+    border: 2px solid transparent;
+    cursor: pointer;
+    display: inline-block;
+    height: 30px;
+    margin: 2px;
+    width: 30px;
+}
+.tool-button:hover {
+    border-color: #777777;
+}
+.tool-delete {
+    background-position: -50% 0 ;
+}
+.tool-download {
+    background-position: -50% 50% ;
+}
+.tool-edit {
+    background-position: 0 0 ;
+}

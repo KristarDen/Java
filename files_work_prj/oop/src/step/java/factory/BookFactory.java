@@ -25,4 +25,6 @@ public class BookFactory implements ConcreteFactory {
     public String getLiteratureType() {
         return "Book";
     }
+
+
 }

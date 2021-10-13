@@ -1,5 +1,7 @@
 package step.java.library;
 
+import org.json.JSONObject;
+
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
@@ -50,5 +52,19 @@ public class Newspaper
                 super.getTitle(),
                 printDateFormat.format( this.date )
         );
+    }
+
+
+    @Override
+    public String toString() {
+        return  this.getTitle() + " " + this.getDate();
+    }
+
+    @Override
+    public String toJsonString(){
+        JSONObject json = new JSONObject();
+        json.append("date", this.getDate());
+        json.append("title" , this.getTitle() );
+        return  json.toString();
     }
 }

@@ -1,5 +1,7 @@
 package step.java.library;
 
+import org.json.JSONObject;
+
 public class Journal
         extends Literature      // extension - inheritance
         implements Printable {  // interface implementation
@@ -26,5 +28,19 @@ public class Journal
                 super.getTitle(),
                 number
         );
+    }
+
+
+    @Override
+    public String toString() {
+        return  this.getTitle() + " " + this.number;
+    }
+
+    @Override
+    public String toJsonString(){
+        JSONObject json = new JSONObject();
+        json.append("number", this.number);
+        json.append("title" , this.getTitle() );
+        return  json.toString();
     }
 }
